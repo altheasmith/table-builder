@@ -1,5 +1,7 @@
 from django.db import models
 
+
+# Model for Account Data
 class Account(models.Model):
 
     STATUS_CHOICES = (
@@ -13,5 +15,6 @@ class Account(models.Model):
                         choices=STATUS_CHOICES,
                         default='Active')
 
+    # Function for readability of Account class instances
     def __str__(self):
         return self.name

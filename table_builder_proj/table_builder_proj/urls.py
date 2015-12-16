@@ -16,17 +16,22 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+# Importing main page View
 from table_builder.views import AccountView
+# Importing Django REST Framework ViewSet
 from table_builder.viewsets import AccountViewSet
+# Django REST Framework ViewSet Routing:
 from rest_framework import routers
-
 router = routers.DefaultRouter()
 router.register(r'Account', AccountViewSet)
 
 
 urlpatterns = [
+    # Django Admin Site:
     url(r'^admin/', admin.site.urls),
+    # Django REST Framework API site:
     url(r'^api/v1/', include(router.urls), name='api'),
+    # Main Page
     url(r'^$', AccountView.as_view(), name='main'),
 
 ]

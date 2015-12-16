@@ -1,6 +1,10 @@
 from django.test import TestCase
 from table_builder.models import Account
 
+
+# Tests:
+
+# Test Case for info storing correctly in Databases
 class AccountTestCase(TestCase):
     def setUp(self):
         Account.objects.create(

@@ -1,6 +1,7 @@
 from table_builder.models import Account
 
 
+# Account Data, with dictionary keys converted to strings for Python
 accounts = [
         {
             'accountName': 'Checking Account',
@@ -38,9 +39,9 @@ def seed(accounts):
             status=item['status'],
         )
     print('Database Seeded')
+
 '''
 Text to run seed file in terminal:
 from table_builder.db_seed import accounts, seed
 seed(accounts)
-
 '''
