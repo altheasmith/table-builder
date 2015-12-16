@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from table_builder.views import MainView, AllAccounts
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', MainView.as_view(), name='main'),
+    url(r'^all_accounts/', AllAccounts.as_view(), name='all_accounts'),
 ]
