@@ -5,27 +5,27 @@ accounts = [
         {
             'accountName': 'Checking Account',
             'amount': 15010,
-            'status': 'active'
+            'status': 'Active'
         },
         {
             'accountName': 'Savings Account',
             'amount': 55020,
-            'status': 'active'
+            'status': 'Active'
         },
         {
             'accountName': 'Travel Fund Account',
             'amount': 25030,
-            'status': 'inactive'
+            'status': 'Inactive'
         },
         {
             'accountName': 'Investment Account',
             'amount': 1500500,
-            'status': 'active'
+            'status': 'Active'
         },
         {
             'accountName': 'Education Account',
             'amount': 14500,
-            'status': 'active'
+            'status': 'Active'
         }
     ]
 

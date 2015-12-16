@@ -1,11 +1,9 @@
 $(document).ready( function() {
   // AJAX get request to API for account information
   $.get('api/v1/Account', function(data) {
-    var headers = []
+
     var total = 0
-    $.each(data[0], function(k, v) {
-      headers.push(k)
-    });
+
     $.each(data, function() {
       $.each(this, function(k, v) {
         if (k == 'amount') {
@@ -13,16 +11,27 @@ $(document).ready( function() {
         }
       });
     });
-    console.log(headers, total, data)
-    var table = '<tr>';
-    for (i in headers) {
-      table += '<td>' + headers[i] + '</td>'
-    }
-    table += '</tr>'
-    for (account in data) {
 
+    var accounts_data = ''
+
+    for (i in data) {
+      accounts_data += '<tr>\
+                        <td>' + data[i].name + '</td>\
+                        <td>' + data[i].amount + '</td>\
+                        <td>' + data[i].status + '</td>\
+                      </tr>';
     }
-    console.log(table)
-    $('#accounts_table').innerHTML = table;
+
+    var total_data = '<tr class="total">\
+                        <td>Total</td>\
+                        <td>' + total + '</td>\
+                        <td></td>\
+                      </tr>'
+
+    var table = accounts_data + total_data
+
+    $('#accounts_table').append(table);
+
   });
+
 });
