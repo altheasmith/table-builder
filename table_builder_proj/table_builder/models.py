@@ -1,7 +1,7 @@
 from django.db import models
 
 class Account(models.Model):
-
+    
     STATUS_CHOICES = (
         ('inactive', 'Inactive'),
         ('active', 'Active'),

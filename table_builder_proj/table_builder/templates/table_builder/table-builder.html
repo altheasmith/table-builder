@@ -41,13 +41,19 @@ Refactorings Applied
   </head>
 
   <body>
-
+    <!-- Make title dynamic -->
     <h1>Your Accounts</h1>
 
-    <div class="container">
+    <div class="container" id='target'>
 
       <table id='accounts_table'>
-
+        <tr>
+          {% for header in headers %}
+          <th>{{header}}</th>
+          {% empty %}
+          No Accounts have been loaded
+          {% endfor %}
+        </tr>
         {% for account in accounts %}
         <tr>
           <td>{{account.name}}</td>
@@ -55,9 +61,12 @@ Refactorings Applied
           <td>{{account.status}}</td>
         </tr>
         {% empty %}
-        <tr>No Accounts have been Added</tr>
         {% endfor %}
-
+        <tr class='total'>
+          <td>Total</td>
+          <td>{{total}}</td>
+          <td></td>
+        <tr>
       </table>
 
     </div>
@@ -65,6 +74,7 @@ Refactorings Applied
   </body>
 
   <footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src='{% static "table_builder/table-builder.js" %}'></script>
   </footer>
 
