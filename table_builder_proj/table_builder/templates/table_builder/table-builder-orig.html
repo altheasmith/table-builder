@@ -1,0 +1,99 @@
+<!--
+
+Purpose
+========
+Build a HTML table out of json data
+
+Exercise
+==========
+Refactor the code using Web Development best practices.
+
+Notes
+=======
+
+- You are free to use any additional libraries that may be needed to simplify your code
+- Bonus points for styling the page
+- Additional Bonus for including any missing functionality. You are free to imagine what would make sense
+if you were building this as part of an app.
+
+- Make a list of refactorings that you have applied as a running list below:
+
+ 
+Refactorings Applied
+=====================
+-  
+- 
+- 
+- etc.
+
+-->
+<html>
+
+<head>
+    <title>Simple Table Builder</title>
+</head>
+
+<body>
+
+<h1>Your Accounts</h1>
+
+<div class="container"></div>
+
+<script>
+    var accounts = [
+        {
+            accountName: 'Checking Account',
+            amount: 15010,
+            status: 'active'
+        },
+        {
+            accountName: 'Savings Account',
+            amount: 55020,
+            status: 'active'
+        },
+        {
+            accountName: 'Travel Fund Account',
+            amount: 25030,
+            status: 'inactive'
+        },
+        {
+            accountName: 'Investment Account',
+            amount: 1500500,
+            status: 'active'
+        },
+        {
+            accountName: 'Education Account',
+            amount: 14500,
+            status: 'active'
+        }
+    ];
+
+
+    var html = '<table>';
+
+    html += '<tr><td>Name</td><td>Amount</td><td>Status</td></tr>';
+
+    var total = 0;
+    for (var i = 0; i < accounts.length; i++) {
+
+        html += '<tr>';
+
+        html += '<td>' + accounts[i].accountName + '</td>';
+        html += '<td>' + accounts[i].amount + '</td>';
+        html += '<td>' + accounts[i].status + '</td>';
+
+        html += '</tr>';
+
+        total += accounts[i].amount;
+    }
+
+    html += '<tr><td><strong>Total</strong></td>' + '<td><strong>' + total + '</strong></td>' + '<td></td></tr>';
+
+    html += '</table>';
+
+
+    document.querySelector('.container').innerHTML = html;
+</script>
+</body>
+
+</html>

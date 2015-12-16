@@ -33,5 +33,4 @@ urlpatterns = [
     url(r'^api/v1/', include(router.urls), name='api'),
     # Main Page
     url(r'^$', AccountView.as_view(), name='main'),
-
 ]
