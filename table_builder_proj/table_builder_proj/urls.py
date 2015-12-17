@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 # Importing main page View and original Page View
-from table_builder.views import AccountView, TestOriginalView, TableData
+from table_builder.views import AccountView, TestOriginalView
 # Importing Django REST Framework ViewSet
 from table_builder.viewsets import AccountViewSet
 # Django REST Framework ViewSet Routing:
