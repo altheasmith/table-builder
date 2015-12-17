@@ -26,6 +26,18 @@
         </tr>
       </table>
 
+      <hr/>
+
+      <div id="forms" class='col-md-4'>
+        <form action='/create'>
+          <button class='btn btn-default'>
+            Add New Account
+          </button>
+        </form>
+        {% block forms%}
+        {% endblock %}
+      </div>
+
     </div>
 
   </body>

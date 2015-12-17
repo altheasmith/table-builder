@@ -54,8 +54,12 @@ $(document).ready( function() {
 
     // TESTS:
     var $table_data = $('#accounts_table').html()
-    console.log($table_data)
+    // console.log($table_data)
 
   });
+  
+  // Styling form data
+  $('#forms input').addClass('form-control');
+  $('#forms select').addClass('form-control');
 
 });

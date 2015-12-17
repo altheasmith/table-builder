@@ -1,0 +1,12 @@
+{% extends 'table_builder/table-builder.html' %}
+{% load staticfiles %}
+
+{% block forms %}
+</br>
+<form action="/create" method="post">{% csrf_token %}
+  <fieldset class="form-group">
+    {{ form }}
+    <input class="form-control" type="submit" value="Create" />
+  </fieldset>
+</form>
+{% endblock %}

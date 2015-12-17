@@ -18,6 +18,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 # Importing main page View and original Page View
 from table_builder.views import AccountView, TestOriginalView
+# Importing views for CRUD functions
+from table_builder.views import AccountCreate, AccountUpdate, AccountDelete
 # Importing Django REST Framework ViewSet
 from table_builder.viewsets import AccountViewSet
 # Django REST Framework ViewSet Routing:
@@ -35,4 +37,11 @@ urlpatterns = [
     url(r'^$', AccountView.as_view(), name='main'),
     # Original table-builder Page
     url(r'^orig', TestOriginalView.as_view(), name='orig'),
+    # Create new account
+    url(r'^create', AccountCreate.as_view(success_url = '/create'), name='create'),
+    # Update existing account information
+    url(r'^update', AccountUpdate.as_view(), name='update'),
+    # Delete account
+    url(r'^delete', AccountDelete.as_view(), name='delete'),
+
 ]
