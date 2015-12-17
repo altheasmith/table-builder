@@ -18,15 +18,19 @@ if you were building this as part of an app.
 
 - Make a list of refactorings that you have applied as a running list below:
 
- 
+
 Refactorings Applied
 =====================
--  
-- 
-- 
+-
+-
+-
 - etc.
 
 -->
+
+<!-- Loading static files to run tests -->
+{% load staticfiles %}
+
 <html>
 
 <head>
@@ -68,8 +72,8 @@ Refactorings Applied
         }
     ];
 
-
-    var html = '<table>';
+    // Adding ID to run tests
+    var html = '<table id="accounts_table_orig">';
 
     html += '<tr><td>Name</td><td>Amount</td><td>Status</td></tr>';
 
@@ -95,5 +99,9 @@ Refactorings Applied
     document.querySelector('.container').innerHTML = html;
 </script>
 </body>
-
+<footer>
+  <!-- Adding scripts to run tests -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src='{% static "table_builder/table-builder-orig.js" %}'></script>
+</footer>
 </html>

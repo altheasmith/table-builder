@@ -9,3 +9,9 @@ class AccountView(View):
     def get(self, request):
         template = 'table_builder/table-builder.html'
         return render(request, template)
+
+# View for rendering original table-builder page
+class TestOriginalView(View):
+    def get(self, request):
+        template = 'table_builder/table-builder-orig.html'
+        return render(request, template)

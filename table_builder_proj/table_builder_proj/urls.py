@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-# Importing main page View
-from table_builder.views import AccountView
+# Importing main page View and original Page View
+from table_builder.views import AccountView, TestOriginalView
 # Importing Django REST Framework ViewSet
 from table_builder.viewsets import AccountViewSet
 # Django REST Framework ViewSet Routing:
@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^api/v1/', include(router.urls), name='api'),
     # Main Page
     url(r'^$', AccountView.as_view(), name='main'),
+    # Original table-builder Page
+    url(r'^orig', TestOriginalView.as_view(), name='orig'),
 ]

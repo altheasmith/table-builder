@@ -52,6 +52,13 @@ $(document).ready( function() {
     // Appending table rows
     $('#accounts_table').append(table);
 
+    // TESTS:
+    var $table_data = $('#accounts_table').html()
+    console.log($table_data)
+
+    var $table_data = $('#accounts_table').html()
+
+
   });
 
 });
