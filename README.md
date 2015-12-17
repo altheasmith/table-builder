@@ -25,12 +25,12 @@ if you were building this as part of an app.
 Refactorings Applied
 =====================
 - Moved JavaScript to an external linked file
-- Added footer for link to JavaScript files
-- Added doctype
+- Added footer for link to JavaScript files for faster loading
+- Added !DOCTYPE
 - Added character encoding
 - Fixed indentation so there is another indent for each level
-- Kept table structure in html page, moving data and function in js page
-- Defined a function for the accounts data so it can be reused with other data
+- Kept table header structure in html page, moved data and function to js page
+- Defined functions for the accounts data so they can be reused with other data
 - Moved 'strong' styling on 'Total' row to an external css file
 - Added JQuery and Bootstrap (additional CSS styling in table-builder.css file)
 ==Django==
@@ -40,3 +40,7 @@ Refactorings Applied
   original data
 - Added Django Rest Framework API for accessing data, with AJAX get request for
   all account data upon load of table-builder.html page
+- Wrote a suite of five tests in three files in the tests/ directory in the
+  table_builder module to ensure database, webpage, and API functionality,
+  and most importantly to test the output of the new page against the output of
+  the old page, to ensure no functionality is lost with the refactoring

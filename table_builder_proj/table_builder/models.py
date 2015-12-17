@@ -18,8 +18,3 @@ class Account(models.Model):
     # Function for readability of Account class instances
     def __str__(self):
         return self.name
-
-
-class TableData(models.Model):
-
-    data = models.TextField()

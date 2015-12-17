@@ -35,6 +35,4 @@ urlpatterns = [
     url(r'^$', AccountView.as_view(), name='main'),
     # Original table-builder Page
     url(r'^orig', TestOriginalView.as_view(), name='orig'),
-    # Add table data to table database
-    url(r'^table', TableData.as_view(), name='table_data')
 ]
