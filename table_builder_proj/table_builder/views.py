@@ -15,3 +15,8 @@ class TestOriginalView(View):
     def get(self, request):
         template = 'table_builder/table-builder-orig.html'
         return render(request, template)
+
+class TableData(View):
+    def post(self, request, *args, **kwargs):
+        print(*args)
+        return

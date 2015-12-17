@@ -7,7 +7,6 @@ class ClientTest(unittest.TestCase):
         # api = 'b'{"Account":"http://testserver/api/v1/Account/"}''
         # api_account = 'b'[{"name":"Checking Account","amount":15010,"status":"Active"},{"name":"Education Account","amount":14500,"status":"Active"},{"name":"Investment Account","amount":1500500,"status":"Active"},{"name":"Savings Account","amount":55020,"status":"Active"},{"name":"Travel Fund Account","amount":25030,"status":"Inactive"}]''
 
-
     def test_main_page(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)

@@ -39,7 +39,7 @@ $(document).ready( function() {
   };
 
   // AJAX get request to API for account information
-  $.get('api/v1/Account', function(data) {
+  $.get('/api/v1/Account', function(data) {
 
     // Running functions
     total = total(data)
@@ -55,9 +55,6 @@ $(document).ready( function() {
     // TESTS:
     var $table_data = $('#accounts_table').html()
     console.log($table_data)
-
-    var $table_data = $('#accounts_table').html()
-
 
   });
 
