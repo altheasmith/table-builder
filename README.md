@@ -44,3 +44,6 @@ Refactorings Applied
   table_builder module to ensure database, webpage, and API functionality,
   and most importantly to test the output of the new page against the output of
   the old page, to ensure no functionality is lost with the refactoring
+- Deployed static site to [https://altheasmith.github.io](https://altheasmith.github.io)
+- Added a button to add an account to the page
+- Deployed dynamic site to [https://tablebuilder-studymed.rhcloud.com/](https://tablebuilder-studymed.rhcloud.com/)
