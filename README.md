@@ -1,6 +1,5 @@
 TreeView Coding Challenge
 =========
-####(Tree_View app in Table-Builder Project)
 Represent the following data structure as an expandable TreeView.
 
 
@@ -21,6 +20,7 @@ Notes
 
 
 ###My Code
+#####(Tree_View app in Table-Builder Project)
 =======
 - A Django model with a self-referential foreign key to represent the Tree View data
 - The database is seeded through a recursive function in Python with the original JavaScript treeview object of labels/items, with their titles changed to text/nodes so they can be used with bootstrap-treeview, and the keys changed to strings so they can be processed with Python
