@@ -1,59 +1,63 @@
 $(document).ready( function() {
-  // Original structure
+  // Changed 'label' to 'text' and 'items' to 'nodes'
   var items = {
-      label: 'Node Label',
-      items: [
+      text: 'Node Label',
+      nodes: [
           {
-              label: 'Child Node Label',
-              items: [
+              text: 'Child Node Label',
+              nodes: [
                   {
-                      label: 'Child Node Label',
-                      items: [
+                      text: 'Child Node Label',
+                      nodes: [
                           {
-                              label: 'Child Node Label',
-                              items: [
+                              text: 'Child Node Label',
+                              nodes: [
 
                               ]
                           },
                           {
-                              label: 'Child Node Label',
+                              text: 'Child Node Label',
                           },
                           {
-                              label: 'Leaf Node Label'
+                              text: 'Leaf Node Label'
                           }
                       ]
                   }
               ]
           },
           {
-              label: 'Leaf Node Label'
+              text: 'Leaf Node Label'
           }
       ]
   };
 
-  // Condensed to better visualize structure
-  var items = {label: 'Node Label',
-              items: [{label: 'Child Node Label',
-                      items: [{label: 'Child Node Label',
-                              items: [{label: 'Child Node Label',
-                                      items: []
-                                      },
-                                      {label: 'Child Node Label',},
-                                      {label: 'Leaf Node Label'}
-                              ]
-                      }
-                      ]
-              },
-              {label: 'Leaf Node Label'}
-              ]
-  };
+  // Function to adjust keys
+  // var items = {
+  //     label: 'Node Label',
+  //     items: = []
+  //   }
+  //
+  // function changeKeys(items) {
+  //   for (key, val) in items {
+  //     if key == 'label':
+  //   }
+  // }
 
-  function getTree(data) {
-    // treeview function takes data in an array
-    return data;
+
+
+  function getTree(items) {
+    // treeview takes dictionary for arguments which requires elements to be in
+    // an array of dictionaries
+    if (items instanceof Array) {
+      return items;
+    }
+    else {
+      return [items];
+    }
   };
 
   // Function to build tree
   $('#tree').treeview({data: getTree(items)});
+  $('#tree2').treeview({data: getTree(tree)});
 
 });
