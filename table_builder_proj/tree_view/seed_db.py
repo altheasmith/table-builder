@@ -50,18 +50,6 @@ tree = [
   }
 ];
 
-def AddChildNode(nodes):
-    childNodes = []
-    for node in nodes:
-        childNode = TreeNode.objects.create(
-            text=node['text']
-        )
-        childNode.save()
-        childNodes.append(childNode)
-        if 'nodes' in node.keys():
-            childNodes = AddChildNode(node['nodes'])
-    return childNodes
-
 def AddNodes_Recursive(nodes):
     parentNodes = []
     for node in nodes:
@@ -69,21 +57,17 @@ def AddNodes_Recursive(nodes):
             text=node['text']
         )
         newNode.save()
-        print(newNode, 'created')
         parentNodes.append(newNode)
         if 'nodes' in node.keys():
             childNodes = AddNodes_Recursive(node['nodes'])
-            print(newNode, childNodes)
             for childNode in childNodes:
                 childNode.parentNode = newNode
-                print(childNode, 'parent saved as', newNode)
                 childNode.save()
-    print('childNodes returned', parentNodes)
     return parentNodes
 
 
 '''
-from tree_view.seed_db import items, tree, AddNodes_Recursive, AddChildNode
+from tree_view.seed_db import items, tree, AddNodes_Recursive
 AddNodes_Recursive(items)
 
 from tree_view.models import TreeNode
