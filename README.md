@@ -17,3 +17,9 @@ Notes
 - Bonus points for styling the TreeView
 - Bonus for writing Unit Tests
 - You have 24 hours to complete the exercise
+
+
+==My Code==
+I created a Django model with a self-referential foreign key to represent the Tree View data
+The database is seeded through a recursive function in Python with the original JavaScript array of labels/items, with their titles changed to text/nodes so they can be used with bootstrap-treeview
+An AJAX request pulls the data from the database through an API, and builds the TreeView datastructure using the Foreign Key (parent node) relationships before passing it to the Bootstrap-Treeview function to be displayed on the page
