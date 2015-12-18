@@ -32,7 +32,10 @@ router.register(r'Account', AccountViewSet)
 from tree_view.views import TreeView
 # Importing Django REST Framework ViewSet
 from tree_view.viewsets import TreeNodeViewSet
+# Django REST Framework ViewSet Routing:
 router.register(r'TreeNode', TreeNodeViewSet)
+# Importing views for CRUD functions
+from tree_view.views import TreeNodeCreate
 
 urlpatterns = [
     # Django Admin Site:
@@ -40,16 +43,19 @@ urlpatterns = [
     # Django REST Framework API site:
     url(r'^api/v1/', include(router.urls), name='api'),
     # Main Page
-    url(r'^$', AccountView.as_view(), name='main'),
+    url(r'^table$', AccountView.as_view(), name='main'),
     # Original table-builder Page
     url(r'^orig', TestOriginalView.as_view(), name='orig'),
     # Create new account
-    url(r'^create', AccountCreate.as_view(success_url = '/create'), name='create'),
+    url(r'^table_create', AccountCreate.as_view(success_url = '/table_create'), name='table_create'),
     # Update existing account information
     url(r'^update', AccountUpdate.as_view(), name='update'),
     # Delete account
     url(r'^delete', AccountDelete.as_view(), name='delete'),
     # Tree view page
-    url(r'^tree', TreeView.as_view(), name='tree')
+    url(r'^$', TreeView.as_view(), name='tree'),
+    # Create a new TreeNode
+    url(r'^node_create', TreeNodeCreate.as_view(success_url = '/node_create'), name='node_create'),
+
 
 ]

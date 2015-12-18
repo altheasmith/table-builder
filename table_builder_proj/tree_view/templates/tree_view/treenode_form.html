@@ -1,9 +1,9 @@
-{% extends 'table_builder/table-builder.html' %}
+{% extends 'tree_view/m-tree-view.html' %}
 {% load staticfiles %}
 
 {% block forms %}
 </br>
-<form action="/table_create" method="post">{% csrf_token %}
+<form action="/node_create" method="post">{% csrf_token %}
   <fieldset class="form-group">
     {{ form }}
     <input class="form-control" type="submit" value="Create" />

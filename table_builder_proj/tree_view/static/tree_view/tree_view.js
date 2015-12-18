@@ -43,7 +43,7 @@ $(document).ready( function() {
     }
   };
 
-  // Helper Function for AJAX call
+  // Helper Function for AJAX call to populate child IDs into parent Nodes
   function findChildNodes(data, node) {
     for (i in data) {
       if (data[i].parentNode == node.id) {
@@ -53,14 +53,12 @@ $(document).ready( function() {
     return node;
   };
 
-  // Recursive function for finding parent nodes
+  // Recursive function for finding parent nodes and adding child node
   function findParent(tree_data, node) {
     for (i in tree_data) {
       if ($.inArray(node.id, tree_data[i].node_ids) != -1) {
         tree_data[i].nodes.push(node);
         nodes_added.push(node);
-        console.log(node.parentNode, 'added to', tree_data[i]);
-        console.log('nodes added', nodes_added);
         if (tree_data[i].node_ids.length == tree_data[i].nodes.length) {
           delete tree_data[i].node_ids;
         }
@@ -87,18 +85,21 @@ $(document).ready( function() {
     for (i in data) {
       if (data[i].parentNode == null) {
         tree_data.push(data[i]);
-        console.log(data[i].text, 'added');
         nodes_added.push(data[i]);
       }
       else {
         nodes_added = findParent(tree_data, data[i]);
       }
     }
-    console.log(tree_data)
     $('#tree').treeview({data: getTree(tree_data)});
+    $('#tree').treeview('expandAll')
   });
 
-  // Function to build tree without AJAX/API
+  // Function to build tree without AJAX/API (static files)
   // $('#tree').treeview({data: getTree(items)});
+
+  // Styling form data
+  $('#forms input').addClass('form-control');
+  $('#forms select').addClass('form-control');
 
 });

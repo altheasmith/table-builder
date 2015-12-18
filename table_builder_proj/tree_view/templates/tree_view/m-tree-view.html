@@ -15,8 +15,22 @@
     <h1 class="page-header text-center">TreeView</h1>
 
     <div class="container panel">
+
       <div id='tree'>
       </div>
+
+    <hr/>
+
+      <div id="forms" class='col-md-4'>
+        <form action='/node_create'>
+          <button class='btn btn-default'>
+            Add New Node
+          </button>
+        </form>
+        {% block forms%}
+        {% endblock %}
+      </div>
+
     </div>
 
     <script type="text/javascript">
