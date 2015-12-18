@@ -1,0 +1,16 @@
+.total {
+  font-weight: bold;
+}
+
+body {
+  background-color:#002b36;
+  color:lightgrey;
+}
+
+table {
+  color:black;
+}
+
+label {
+  color:black;
+}
