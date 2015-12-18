@@ -1,3 +1,4 @@
 from django.contrib import admin
+from tree_view.models import TreeNode
 
-# Register your models here.
+admin.site.register(TreeNode)

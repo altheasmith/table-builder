@@ -12,7 +12,7 @@ class TreeView(View):
 # View for creating a new account
 class TreeNodeCreate(CreateView):
     model = TreeNode
-    fields = ['text','parentNode']
+    fields = ['text']
 
 # View for updating TreeNode information
 class TreeNodeUpdate(UpdateView):
