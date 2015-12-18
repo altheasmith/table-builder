@@ -57,5 +57,4 @@ urlpatterns = [
     # Create a new TreeNode
     url(r'^node_create', TreeNodeCreate.as_view(success_url = '/node_create'), name='node_create'),
 
-
 ]

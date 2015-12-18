@@ -1,5 +1,5 @@
 $(document).ready( function() {
-  // Changed 'label' to 'text' and 'items' to 'nodes' for bootstrap-treeview
+  // Data Provided: Changed 'label' to 'text' and 'items' to 'nodes' for bootstrap-treeview
   var items = {
       text: 'Node Label',
       nodes: [
@@ -31,7 +31,7 @@ $(document).ready( function() {
       ]
   };
 
-  // Adding data with static data above
+  // Finalizing Data for TreeView delivery
   function getTree(items) {
     // treeview takes dictionary for arguments which requires elements to be in
     // an array of dictionaries
