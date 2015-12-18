@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     # Django REST Framework
     'rest_framework',
     # To use bower in Django (to install bootstrap-treeview)
-    'djangobower',
+    # 'djangobower',
 
 ]
 

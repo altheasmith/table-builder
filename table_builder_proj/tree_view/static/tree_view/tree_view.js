@@ -93,6 +93,9 @@ $(document).ready( function() {
     }
     $('#tree').treeview({data: getTree(tree_data)});
     $('#tree').treeview('expandAll')
+    
+    $tree = $('#tree').html()
+    console.log($tree)
   });
 
   // Function to build tree without AJAX/API (static files)
@@ -101,5 +104,7 @@ $(document).ready( function() {
   // Styling form data
   $('#forms input').addClass('form-control');
   $('#forms select').addClass('form-control');
+
+
 
 });
