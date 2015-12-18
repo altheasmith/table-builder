@@ -14,7 +14,7 @@ class ClientTest(unittest.TestCase):
     def test_api_function(self):
         response = self.client.get('/api/v1/')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.content, b'{"Account":"http://testserver/api/v1/Account/"}')
+        self.assertEqual(response.content, b'{"Account":"http://testserver/api/v1/Account/","TreeNode":"http://testserver/api/v1/TreeNode/"}')
 
     def test_api_account(self):
         response = self.client.get('/api/v1/Account/')
@@ -45,7 +45,7 @@ from django.test import Client
 c = Client()
 response = c.get('/api/v1/')
 response.content
-response.content == b'{"Account":"http://testserver/api/v1/Account/"}'
+response.content == b'{"Account":"http://testserver/api/v1/Account/","TreeNode":"http://testserver/api/v1/TreeNode/"}'
 '''
 
 # API Account Data: should return True

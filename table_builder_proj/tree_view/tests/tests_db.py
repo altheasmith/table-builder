@@ -1,7 +1,5 @@
 from django.test import TestCase
-
-from django.test import TestCase
-from tree_view import TreeNode
+from tree_view.models import TreeNode
 
 
 # Tests:
@@ -13,20 +11,17 @@ class TreeNodeTestCase(TestCase):
             text='New Node!'
         )
         parentNode.save()
-        TreeNode.objects.create(
+        childNode = TreeNode.objects.create(
             text='Other Node',
             parentNode=parentNode
         )
+        childNode.save()
 
     def test_node_info_stored_in_db(self):
         parent = TreeNode.objects.get(
             text='New Node!'
         )
-        child = TreeNode.objects.filter(
+        child = TreeNode.objects.get(
             parentNode=parent
         )
         self.assertEqual(child.text, 'Other Node')
-
-    def tearDown(self):
-        TreeNode.objects.get(text="New Node!").delete()
-        TreeNode.objects.get(name="Other Node").delete()
