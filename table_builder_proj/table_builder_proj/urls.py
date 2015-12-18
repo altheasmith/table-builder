@@ -30,7 +30,9 @@ router.register(r'Account', AccountViewSet)
 
 # Tree View:
 from tree_view.views import TreeView
-
+# Importing Django REST Framework ViewSet
+from tree_view.viewsets import TreeNodeViewSet
+router.register(r'TreeNode', TreeNodeViewSet)
 
 urlpatterns = [
     # Django Admin Site:

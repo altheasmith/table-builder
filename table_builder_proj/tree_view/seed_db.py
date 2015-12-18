@@ -84,7 +84,7 @@ def AddNodes_Recursive(nodes):
 
 '''
 from tree_view.seed_db import items, tree, AddNodes_Recursive, AddChildNode
-AddNodes_Recursive(tree)
+AddNodes_Recursive(items)
 
 from tree_view.models import TreeNode
 nodes = TreeNode.objects.all()
